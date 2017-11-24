@@ -36,4 +36,5 @@ class UserCreation(forms.ModelForm):
         if commit:
             user.save()
             userin = Usuario(id_persona = user, sexo = self.cleaned_data["sex"])
+            userin.save()
             return userin
