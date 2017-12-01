@@ -1,0 +1,16 @@
+#static{
+				background: red;
+				position: absolute;
+				top: 0px;
+				width: 100%;
+				height: 500px;
+			}
+			.cuadros{
+				position: absolute;
+				height: 100%;
+				width: 33%;
+				top:0px;
+			}
+			body>header>#static{
+				background: gray;
+			}

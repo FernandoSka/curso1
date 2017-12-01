@@ -27,7 +27,7 @@ class Registro(CreateView):
 class LoginView(FormView):
     form_class = AuthenticationForm
     template_name = "login.html"
-    success_url =  reverse_lazy("login")
+    success_url =  reverse("/login")
 
     def dispatch(self, request, *args, **kwargs):
         if request.user.is_authenticated():
@@ -53,5 +53,5 @@ class Informacion(ListView):
     def get_context_data(self, **kwargs):
         user = self.request.user
         context = super(Informacion, self).get_context_data(**kwargs)
-        context['usuario'] = Usuario.objects.all()
+        context['usuario'] = Usuario.objects.get(id_persona=user)
         return context
